@@ -1,0 +1,144 @@
+/* Style Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Animation for Fade In */
+@keyframes fadeIn {
+	from {
+		transform: translateY(25px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+/* Animation for Rabbit Animation */
+@keyframes frameAnimate {
+	from {
+		background-position: 0 0;
+	}
+
+	25% {
+		background-position: 45% 0;
+	}
+
+	50% {
+		background-position: 95% 0;
+	}
+
+	51% {
+		background-position: 0 100%;
+	}
+
+	75% {
+		background-position: 45% 100%;
+	}
+
+	to {
+		background-position: 95% 100%;
+	}
+}
+
+/* Animations for Button Glow */
+
+@keyframes buttonAnimate {
+	from {
+		box-shadow: 0 0 15px yellow;
+	}
+
+	50% {
+		box-shadow: 0 0 30px orange;
+	}
+
+	to {
+		box-shadow: 0 0 50px orangered;
+	}
+}
+
+/* Nav Styles */
+nav {
+	padding: 16px 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	background-color: #212127;
+}
+
+a {
+	font-size: 1.5em;
+	color: ghostwhite;
+	position: relative;
+	text-decoration: none;
+}
+
+/* Nav Effects */
+nav a::before {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: ghostwhite;
+	transition: .5s;
+}
+
+nav a:hover::before {
+	width: 100%;
+}
+/* Main Section Formatting */
+main {
+	display: flex;
+	flex-flow: row wrap;
+	background-color: #313137;
+}
+
+/* Container formatting */
+.container {
+	margin: 10px 20px;
+	padding: 20px;
+	border: 1px solid #9898A7;
+	border-radius: 20px;
+	flex: 1 1 300px;
+	display: flex;
+	justify-content: center;
+}
+
+/* Button Properties */
+button {
+	height: 100px;
+	margin: 10px;
+	background-color: #C0C0D1;
+	border-radius: 20px;
+	transition: .5s;
+}
+
+/* Grow Button */
+button#grow:hover {
+	transform: scale(1.5);
+}
+
+/* Glow Button */
+button#glow:hover {
+	box-shadow: 0 0 25px yellow;
+	animation: buttonAnimate 2s linear infinite alternate;
+}
+
+/* Text Animate */
+#text h2 {
+	color: ghostwhite;
+	position: relative;
+	top: 50px;
+	animation: fadeIn 3s linear;
+}
+
+/* Rabbit Animation */
+#frame {
+	width: 1000px;
+	height: 1000px;
+	background-image: url(Rabbit_spriteSheet.jpg);
+	animation:  frameAnimate 0.7s steps(2, jump-none) infinite;
+}

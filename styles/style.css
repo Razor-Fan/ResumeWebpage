@@ -1,0 +1,106 @@
+/* Style Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Universal/Mobile Rules */
+/* Universal/Mobile Rules: Sets Webpage to take up entire height */
+html, body {
+    height: 100vh;
+}
+
+html {
+    background-color: #000000;
+}
+
+body {
+    background-color: #123524;
+}
+
+/* Universal/Mobile Rules: Hides Tablet/Desktop Elements */
+.tablet-desktop {
+    display: none;
+}
+
+/* Universal/Mobile Rules: Header Styles */
+header {
+    background-color: #00000099;
+}
+
+header h1 {
+    color: #f8f8ff;
+    text-align: center;
+    width: 85%;
+    padding: 8px;
+    margin: auto;
+    border-bottom: 1px solid #f8f8ff;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Universal/Mobile Rules: Nav Styles */
+nav {
+    padding: 8px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+nav a {
+    position: relative;
+    text-align: center;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #f8f8ff;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 2px;
+    width: 0%;
+    background-color: #f8f8ff;
+    transition: 0.5s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Universal/Mobile Rules: Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00000099;
+}
+
+footer p {
+    color: #f8f8ff;
+    padding: 0 5px;
+}
+
+footer a {
+    color: #f8f8ff;
+}
+
+/* Tablet/Desktop Rules */
+@media screen and (min-width: 481px) {
+    /* Tablet/Desktop Rules: Hides Mobile Elements Shows Tablet/Desktop Elements */
+    .tablet-desktop {display: block;}
+    .mobile {display: none;}
+
+    /* Tablet/Desktop Rules: Nav Styles */
+    nav {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
